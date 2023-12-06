@@ -21,8 +21,7 @@ This starter is a lightly-opinionated take on a productive terminal-driven
 development environment based on my own preferences. However, it is trivial to
 customize to your liking both by removing and adding tools that you prefer.
 
-* The default editor is initially `nvim`, which is switched by the end of the
-  quickstart to `lvim` ([LunarVim](https://lunarvim.org))
+* The default editor is initially `lvim`
 * `win32yank` is used to ensure perfect bi-directional copying and pasting to
   and from Windows GUI applications and LunarVim running in WSL
 * The default shell is `zsh`

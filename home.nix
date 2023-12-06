@@ -22,6 +22,7 @@
     htop
     jq
     killall
+    lunarvim
     mosh
     neovim
     procs
@@ -39,8 +40,6 @@
     # FIXME: customize these stable packages to your liking for the languages that you use
 
     # key tools
-    gnumake # for lunarvim
-    gcc # for lunarvim
     gh # for bootstrapping
     just
 
@@ -49,7 +48,7 @@
     go
     lua
     nodejs
-    python
+    python3
     typescript
 
     # rust stuff

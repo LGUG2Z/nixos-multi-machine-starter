@@ -1,0 +1,23 @@
+name: 'build'
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-wsl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - run: ssh-keygen -t rsa -N '' -f ./id_rsa && git add id_rsa.pub
+      - run: nix build .#nixosConfigurations.nixos.config.system.build.toplevel
+  build-hetzner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - run: ssh-keygen -t rsa -N '' -f ./id_rsa && git add id_rsa.pub
+      - run: nix build .#nixosConfigurations.hetzner.config.system.build.toplevel
